@@ -7,13 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0C7E4F31F0342E400488DA2 /* LPRatingViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C7E4F21F0342E400488DA2 /* LPRatingViewState.swift */; };
 		A0F4DBE91F033E2C00CE625D /* LPIntegratedRating.h in Headers */ = {isa = PBXBuildFile; fileRef = A0F4DBE71F033E2C00CE625D /* LPIntegratedRating.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A0F4DBF01F033FD300CE625D /* LPRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4DBEF1F033FD300CE625D /* LPRatingView.swift */; };
+		A0F4DC101F03427B00CE625D /* LPRatingViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4DC0F1F03427B00CE625D /* LPRatingViewConfiguration.swift */; };
+		A0F4DC121F03428E00CE625D /* LPRatingViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4DC111F03428E00CE625D /* LPRatingViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A0C7E4F21F0342E400488DA2 /* LPRatingViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPRatingViewState.swift; sourceTree = "<group>"; };
 		A0F4DBE41F033E2C00CE625D /* LPIntegratedRating.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LPIntegratedRating.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0F4DBE71F033E2C00CE625D /* LPIntegratedRating.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LPIntegratedRating.h; sourceTree = "<group>"; };
 		A0F4DBE81F033E2C00CE625D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0F4DBEF1F033FD300CE625D /* LPRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPRatingView.swift; sourceTree = "<group>"; };
+		A0F4DC0F1F03427B00CE625D /* LPRatingViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPRatingViewConfiguration.swift; sourceTree = "<group>"; };
+		A0F4DC111F03428E00CE625D /* LPRatingViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPRatingViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +55,10 @@
 			isa = PBXGroup;
 			children = (
 				A0F4DBE71F033E2C00CE625D /* LPIntegratedRating.h */,
+				A0F4DBEF1F033FD300CE625D /* LPRatingView.swift */,
+				A0F4DC111F03428E00CE625D /* LPRatingViewDelegate.swift */,
+				A0C7E4F21F0342E400488DA2 /* LPRatingViewState.swift */,
+				A0F4DC0F1F03427B00CE625D /* LPRatingViewConfiguration.swift */,
 				A0F4DBE81F033E2C00CE625D /* Info.plist */,
 			);
 			path = LPIntegratedRating;
@@ -95,6 +107,7 @@
 				TargetAttributes = {
 					A0F4DBE31F033E2C00CE625D = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 					};
 				};
 			};
@@ -130,6 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0F4DC101F03427B00CE625D /* LPRatingViewConfiguration.swift in Sources */,
+				A0F4DC121F03428E00CE625D /* LPRatingViewDelegate.swift in Sources */,
+				A0F4DBF01F033FD300CE625D /* LPRatingView.swift in Sources */,
+				A0C7E4F31F0342E400488DA2 /* LPRatingViewState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +265,7 @@
 		A0F4DBED1F033E2C00CE625D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = YGJQDEP824;
@@ -260,6 +278,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.luispadron.LPIntegratedRating;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -268,6 +287,7 @@
 		A0F4DBEE1F033E2C00CE625D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = YGJQDEP824;
@@ -304,6 +324,7 @@
 				A0F4DBEE1F033E2C00CE625D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
