@@ -74,6 +74,7 @@ open class LPRatingView: UIView {
         self.addSubview(approvalButton)
         self.addSubview(rejectionButton)
         
+        // Custom button drawing
         approvalButton.layer.masksToBounds = false
         approvalButton.layer.cornerRadius = 5.0
         approvalButton.layer.borderWidth = 1.0
@@ -108,19 +109,19 @@ open class LPRatingView: UIView {
     
     // MARK: Subviews
     
-    lazy private var titleLabel: UILabel = {
+    lazy open var titleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         return label
     }()
     
-    lazy private var approvalButton: UIButton = {
+    lazy open var approvalButton: UIButton = {
         let button = UIButton(type: .roundedRect)
         button.addTarget(self, action: #selector(self.approvalButtonTouched), for: .touchUpInside)
         return button
     }()
     
-    lazy private var rejectionButton: UIButton = {
+    lazy open var rejectionButton: UIButton = {
         let button = UIButton(type: .roundedRect)
         button.addTarget(self, action: #selector(self.rejectionButtonTouched), for: .touchUpInside)
         return button
