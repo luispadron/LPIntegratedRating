@@ -7,8 +7,8 @@
 //
 
 public protocol LPRatingViewDelegate: class {
-    func ratingViewConfiguration(for state: LPRatingViewState) -> LPRatingViewConfiguration?
-    func ratingViewDidFinish(with status:  LPRatingViewCompletionStatus)
+    func ratingViewConfiguration(_ view: LPRatingView, for state: LPRatingViewState) -> LPRatingViewConfiguration?
+    func ratingViewDidFinish(_ view: LPRatingView, with status:  LPRatingViewCompletionStatus)
     func performOutAnimation(for view: LPRatingView, from currentState: LPRatingViewState, to nextState: LPRatingViewState)
     func performInAnimation(for view: LPRatingView, from currentState: LPRatingViewState, to nextState: LPRatingViewState)
 }
