@@ -66,7 +66,7 @@ open class LPRatingView: UIView {
                                       width: bounds.width/2 - buttonOffset - buttonSpacing,
                                       height: approvalButton.bounds.height)
         
-        if let config = delegate?.configuration(for: state) {
+        if let config = delegate?.ratingViewConfiguration(for: state) {
             updateView(with: config)
         } else {
             // Fallback and use default config
@@ -100,7 +100,7 @@ open class LPRatingView: UIView {
         // Fade out
         performFadeOutAnimation()
         // Update config
-        if let config = delegate?.configuration(for: state) {
+        if let config = delegate?.ratingViewConfiguration(for: state) {
             updateView(with: config)
         } else {
             // Fallback and use default config
@@ -148,10 +148,10 @@ open class LPRatingView: UIView {
             transition(to: .approval)
         case .approval:
             // User approved twice
-            delegate?.didFinish(with: .ratingApproved)
+            delegate?.ratingViewDidFinish(with: .ratingApproved)
         case .rejection:
             // User denied initally then approved
-            delegate?.didFinish(with: .feedbackApproved)
+            delegate?.ratingViewDidFinish(with: .feedbackApproved)
         }
     }
     
@@ -161,10 +161,10 @@ open class LPRatingView: UIView {
             transition(to: .rejection)
         case .approval:
             // User rejected after initial ask
-            delegate?.didFinish(with: .ratingDenied)
+            delegate?.ratingViewDidFinish(with: .ratingDenied)
         case .rejection:
             // User rejected initially and then again
-            delegate?.didFinish(with: .feedbackDenied)
+            delegate?.ratingViewDidFinish(with: .feedbackDenied)
         }
     }
     

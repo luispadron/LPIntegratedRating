@@ -7,6 +7,6 @@
 //
 
 public protocol LPRatingViewDelegate: class {
-    func configuration(for state: LPRatingViewState) -> LPRatingViewConfiguration?
-    func didFinish(with status: LPRatingViewCompletionStatus) 
+    func ratingViewConfiguration(for state: LPRatingViewState) -> LPRatingViewConfiguration?
+    func ratingViewDidFinish(with statu:  LPRatingViewCompletionStatus) 
 }
