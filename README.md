@@ -144,7 +144,7 @@ Here is the flow of the view, and the types of cases that will be passed to the 
 
 ![doc-flow](https://raw.githubusercontent.com/luispadron/LPIntegratedRating/master/.github/DocumentationFlow.png)
 
-Read the full documentation [here](#)
+Read the full documentation [here](https://htmlpreview.github.io/?https://raw.githubusercontent.com/luispadron/LPIntegratedRating/master/docs/index.html)
 
 
 

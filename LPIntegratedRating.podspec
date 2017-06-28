@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "LPIntegratedRating"
-  s.version      = "0.1.0"
+  s.version      = "1.0.0"
   s.summary      = "An integrated rating view for iOS"
 
   s.description  = <<-DESC
