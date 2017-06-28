@@ -100,8 +100,8 @@ open class LPRatingView: UIView {
     }
     
     private func transition(to state: LPRatingViewState) {
-        // Fade out
-        performFadeOutAnimation()
+        // Tell delegate to animate out out
+        delegate?.performOutAnimation(for: self, from: self.state, to: state)
         // Update config
         if let config = delegate?.ratingViewConfiguration(for: state) {
             updateView(with: config)
@@ -109,28 +109,12 @@ open class LPRatingView: UIView {
             // Fallback and use default config
             updateView(with: defaultConfiguration)
         }
-        // Fade the views back in
-        performFadeInAnimation()
+        // Tell delegate to animate the view back in
+        delegate?.performInAnimation(for: self, from: self.state, to: state)
         
         
         // Finally set the current state
         self.state = state
-    }
-    
-    private func performFadeOutAnimation() {
-        UIView.animate(withDuration: animationDuration/2) {
-            self.titleLabel.alpha = 0.0
-            self.rejectionButton.alpha = 0.0
-            self.approvalButton.alpha = 0.0
-        }
-    }
-    
-    private func performFadeInAnimation() {
-        UIView.animate(withDuration: animationDuration/2) {
-            self.titleLabel.alpha = 1.0
-            self.rejectionButton.alpha = 1.0
-            self.approvalButton.alpha = 1.0
-        }
     }
     
     private func updateView(with config: LPRatingViewConfiguration) {
