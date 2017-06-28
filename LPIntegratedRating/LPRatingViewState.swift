@@ -23,9 +23,23 @@
 //  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
+/**
+ # LPRatingViewState
+ 
+ The state of the view at a moment in time.
+ 
+ initial: - The view has just been added, user has not touched any buttons
+ 
+ approval: - The user has touched the approval button for the first time
+ 
+ rejection: - The user has touched the rejection button for the first time
+ */
 public enum LPRatingViewState {
+    /// The view has just been added, user has not touched any buttons
     case initial
+    /// The user has touched the approval button for the first time
     case approval
+    /// The user has touched the rejection button for the first time
     case rejection
 }
 

@@ -23,9 +23,19 @@
 //  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
+/**
+ # LPRatingViewCompletionStatus
+ 
+ The completion status is sent once the last possible state for a `LPRatingView` has happened.
+ 
+ */
 public enum LPRatingViewCompletionStatus {
+    /// The user has approved twice, and the view may now be removed and any other neccessary code may be run
     case ratingApproved
+    /// The user has approved once but rejected the final approval, and the view may now be removed
     case ratingDenied
+    /// The user has rejected once, but approved the final time, the view may now be removed and handling code may be run
     case feedbackApproved
+    /// The user has rejected twice, and the view may now be removed
     case feedbackDenied
 }

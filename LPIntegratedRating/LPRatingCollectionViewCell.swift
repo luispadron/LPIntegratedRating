@@ -25,6 +25,13 @@
 
 import UIKit
 
+/**
+ # LPRatingCollectionViewCell
+ 
+ A simple subclass of `UICollectionViewCell` which contains an `LPRatingView`.
+ The rating view will fill up the cell's `contentView` thus to change the size make sure cell sizes are changed in
+ the collection view `sizeForItem` delegate method.
+ */
 open class LPRatingCollectionViewCell: UICollectionViewCell {
     
     // MARK: Properties
@@ -55,13 +62,17 @@ open class LPRatingCollectionViewCell: UICollectionViewCell {
     
     // MARK: Methods
     
+    /// Initilizes the cell by adding the rating view to the cells `contentView`
     private func initCell() {
         // Add view as subview
-        self.contentView.addSubview(ratingView)
+        if !self.contentView.subviews.contains(ratingView) {
+            self.contentView.addSubview(ratingView)
+        }
     }
     
     // MARK: Subviews
     
+    /// The rating view which will be added to the cell's `contentView`
     open lazy var ratingView: LPRatingView = {
         let view = LPRatingView(frame: .zero)
         return view

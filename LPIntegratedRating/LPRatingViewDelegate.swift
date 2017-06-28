@@ -23,13 +23,49 @@
 //  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
+
+/**
+ # LPRatingViewDelegate
+ 
+ The delegate which handles view state changes and configurations for any `LPRatingView`.
+ */
 public protocol LPRatingViewDelegate: class {
+    
+    /**
+     Asks the delegate to return an `LPRatingViewConfiguration` for the specified state of the view
+     
+     ## Important:
+     
+     Returning nil will cause the `LPRatingView` to use the `defaultConfiguration`.
+     */
     func ratingViewConfiguration(_ view: LPRatingView, for state: LPRatingViewState) -> LPRatingViewConfiguration?
+    
+    /**
+     Notifies the delegate that the final state of the view has finished. The view which has notified and which status
+     is sent as well.
+     */
     func ratingViewDidFinish(_ view: LPRatingView, with status:  LPRatingViewCompletionStatus)
+    
+    /**
+     Asks the delegate to perform any animation code that may be required when animating the view OUT, to another state.
+     
+     ## Important:
+     
+     By default there is an extension to this protocol which will simply fade out the view and subviews
+     */
     func performOutAnimation(for view: LPRatingView, from currentState: LPRatingViewState, to nextState: LPRatingViewState)
+    
+    /**
+     Asks the delegate to perform any animation code that may be required when animating the view IN, to another state.
+     
+     ## Important:
+     
+     By default there is an extension to this protocol which will simply fade in the view and subviews
+     */
     func performInAnimation(for view: LPRatingView, from currentState: LPRatingViewState, to nextState: LPRatingViewState)
 }
 
+/// Adds default implementation with basic fade in and out animations
 public extension LPRatingViewDelegate {
     public func performOutAnimation(for view: LPRatingView, from currentState: LPRatingViewState, to nextState: LPRatingViewState) {
         // Basic fade out animation

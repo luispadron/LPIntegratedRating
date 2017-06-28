@@ -25,15 +25,56 @@
 
 import UIKit
 
+/**
+ # LPRatingViewConfiguration
+ 
+ A configuration which an `LPRatingView` will use to configure it's UI.
+ */
 public struct LPRatingViewConfiguration {
+    
+    /**
+     The title for the `LPRatingView`, will displayed at the top and centered
+     */
     public let title: NSAttributedString
+    
+    /**
+     The approval button title, this will be displayed on the right side of the view
+     */
     public let approvalButtonTitle: NSAttributedString
+    
+    /**
+     The rejection button title, this will be displayed on the left side of the view
+     */
     public let rejectionButtonTitle: NSAttributedString
     
+    /**
+     The background color for the view
+     
+     ## Important:
+     
+     By default this will use a light purple color
+     */
     public var backgroundColor: UIColor = UIColor.defaultColor
+    
+    /**
+     The button color for the approval button
+     
+     ## Important:
+     
+     By default this will use `UIColor.white`
+     */
     public var approvalButtonColor: UIColor = UIColor.white
+    
+    /**
+     The button color for the rejection button
+     
+     ## Important:
+     
+     By default this will use a light purple color
+     */
     public var rejectionButtonColor: UIColor = UIColor.defaultColor
     
+    // Creates a configuration with a title, approval title and rejection title
     public init(title: NSAttributedString, approvalButtonTitle: NSAttributedString, rejectionButtonTitle: NSAttributedString) {
         self.title = title
         self.approvalButtonTitle = approvalButtonTitle

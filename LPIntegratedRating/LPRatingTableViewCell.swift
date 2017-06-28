@@ -25,10 +25,18 @@
 
 import UIKit
 
+/**
+ # LPRatingTableViewCell
+ 
+ A simple subclass of `UITableViewCell` which contains an `LPRatingView`.
+ The rating view will fill up the cell's `contentView` thus to change the size make sure cell sizes are changed in
+ the table view `heightForRow` delegate method.
+ */
 open class LPRatingTableViewCell: UITableViewCell {
     
     // MARK: Properties
     
+    /// The delegate of the `LPRatingView` subview, this will just assign the delegate to the `ratingView` subview.
     open weak var delegate: LPRatingViewDelegate? {
         didSet {
             ratingView.delegate = self.delegate
@@ -65,9 +73,10 @@ open class LPRatingTableViewCell: UITableViewCell {
     
     // MARK: Methods
     
+    /// Initializes the cell by adding any subviews and removing cell selection
     private func initCell() {
         // Add view as subview
-        if !self.subviews.contains(ratingView) {
+        if !self.contentView.subviews.contains(ratingView) {
             self.contentView.addSubview(ratingView)
         }
         self.selectionStyle = .none
@@ -75,6 +84,7 @@ open class LPRatingTableViewCell: UITableViewCell {
     
     // MARK: Subviews
     
+    /// The rating view which will be added to the cell's `contentView`
     open lazy var ratingView: LPRatingView = {
         let view = LPRatingView(frame: .zero)
         return view
