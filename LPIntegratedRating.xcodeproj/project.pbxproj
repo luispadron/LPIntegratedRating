@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A00716E81F042FB800038EF5 /* LPRatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00716E71F042FB800038EF5 /* LPRatingTableViewCell.swift */; };
+		A00716EA1F042FE800038EF5 /* LPRatingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00716E91F042FE800038EF5 /* LPRatingCollectionViewCell.swift */; };
 		A0C7E4F31F0342E400488DA2 /* LPRatingViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C7E4F21F0342E400488DA2 /* LPRatingViewState.swift */; };
 		A0C7E4F51F035FD200488DA2 /* LPRatingViewCompletionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C7E4F41F035FD200488DA2 /* LPRatingViewCompletionStatus.swift */; };
 		A0F4DBE91F033E2C00CE625D /* LPIntegratedRating.h in Headers */ = {isa = PBXBuildFile; fileRef = A0F4DBE71F033E2C00CE625D /* LPIntegratedRating.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A00716E71F042FB800038EF5 /* LPRatingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPRatingTableViewCell.swift; sourceTree = "<group>"; };
+		A00716E91F042FE800038EF5 /* LPRatingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPRatingCollectionViewCell.swift; sourceTree = "<group>"; };
 		A0C7E4F21F0342E400488DA2 /* LPRatingViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPRatingViewState.swift; sourceTree = "<group>"; };
 		A0C7E4F41F035FD200488DA2 /* LPRatingViewCompletionStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPRatingViewCompletionStatus.swift; sourceTree = "<group>"; };
 		A0F4DBE41F033E2C00CE625D /* LPIntegratedRating.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LPIntegratedRating.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +62,8 @@
 			children = (
 				A0F4DBE71F033E2C00CE625D /* LPIntegratedRating.h */,
 				A0F4DBEF1F033FD300CE625D /* LPRatingView.swift */,
+				A00716E71F042FB800038EF5 /* LPRatingTableViewCell.swift */,
+				A00716E91F042FE800038EF5 /* LPRatingCollectionViewCell.swift */,
 				A0F4DC111F03428E00CE625D /* LPRatingViewDelegate.swift */,
 				A0F4DC0F1F03427B00CE625D /* LPRatingViewConfiguration.swift */,
 				A0C7E4F21F0342E400488DA2 /* LPRatingViewState.swift */,
@@ -149,7 +155,9 @@
 				A0F4DC101F03427B00CE625D /* LPRatingViewConfiguration.swift in Sources */,
 				A0F4DC121F03428E00CE625D /* LPRatingViewDelegate.swift in Sources */,
 				A0C7E4F51F035FD200488DA2 /* LPRatingViewCompletionStatus.swift in Sources */,
+				A00716EA1F042FE800038EF5 /* LPRatingCollectionViewCell.swift in Sources */,
 				A0F4DBF01F033FD300CE625D /* LPRatingView.swift in Sources */,
+				A00716E81F042FB800038EF5 /* LPRatingTableViewCell.swift in Sources */,
 				A0C7E4F31F0342E400488DA2 /* LPRatingViewState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
