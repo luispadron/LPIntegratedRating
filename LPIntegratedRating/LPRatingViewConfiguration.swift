@@ -9,13 +9,13 @@
 import UIKit
 
 public struct LPRatingViewConfiguration {
-    let title: NSAttributedString
-    let approvalButtonTitle: NSAttributedString
-    let rejectionButtonTitle: NSAttributedString
+    public let title: NSAttributedString
+    public let approvalButtonTitle: NSAttributedString
+    public let rejectionButtonTitle: NSAttributedString
     
-    var backgroundColor: UIColor = UIColor.defaultColor
-    var approvalButtonColor: UIColor = UIColor.white
-    var rejectionButtonColor: UIColor = UIColor.defaultColor
+    public var backgroundColor: UIColor = UIColor.defaultColor
+    public var approvalButtonColor: UIColor = UIColor.white
+    public var rejectionButtonColor: UIColor = UIColor.defaultColor
     
     public init(title: NSAttributedString, approvalButtonTitle: NSAttributedString, rejectionButtonTitle: NSAttributedString) {
         self.title = title

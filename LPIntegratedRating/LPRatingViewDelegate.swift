@@ -8,13 +8,13 @@
 
 public protocol LPRatingViewDelegate: class {
     func ratingViewConfiguration(for state: LPRatingViewState) -> LPRatingViewConfiguration?
-    func ratingViewDidFinish(with statu:  LPRatingViewCompletionStatus)
+    func ratingViewDidFinish(with status:  LPRatingViewCompletionStatus)
     func performOutAnimation(for view: LPRatingView, from currentState: LPRatingViewState, to nextState: LPRatingViewState)
     func performInAnimation(for view: LPRatingView, from currentState: LPRatingViewState, to nextState: LPRatingViewState)
 }
 
 public extension LPRatingViewDelegate {
-    func performOutAnimation(for view: LPRatingView, from currentState: LPRatingViewState, to nextState: LPRatingViewState) {
+    public func performOutAnimation(for view: LPRatingView, from currentState: LPRatingViewState, to nextState: LPRatingViewState) {
         // Basic fade out animation
         UIView.animate(withDuration: view.animationDuration/2) {
             view.titleLabel.alpha = 0.0
@@ -23,7 +23,7 @@ public extension LPRatingViewDelegate {
         }
     }
     
-    func performInAnimation(for view: LPRatingView, from currentState: LPRatingViewState, to nextState: LPRatingViewState) {
+    public func performInAnimation(for view: LPRatingView, from currentState: LPRatingViewState, to nextState: LPRatingViewState) {
         // Basic fade in animation
         UIView.animate(withDuration: view.animationDuration/2) {
             view.titleLabel.alpha = 1.0

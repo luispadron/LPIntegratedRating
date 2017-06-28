@@ -50,7 +50,9 @@ open class LPRatingTableViewCell: UITableViewCell {
     
     private func initCell() {
         // Add view as subview
-        self.contentView.addSubview(ratingView)
+        if !self.subviews.contains(ratingView) {
+            self.contentView.addSubview(ratingView)
+        }
         self.selectionStyle = .none
     }
     
