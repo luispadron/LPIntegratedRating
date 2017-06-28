@@ -8,4 +8,5 @@
 
 public protocol LPRatingViewDelegate: class {
     func configuration(for state: LPRatingViewState) -> LPRatingViewConfiguration?
+    func didFinish(with status: LPRatingViewCompletionStatus) 
 }

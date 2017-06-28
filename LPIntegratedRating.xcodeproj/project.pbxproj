@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A0C7E4F31F0342E400488DA2 /* LPRatingViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C7E4F21F0342E400488DA2 /* LPRatingViewState.swift */; };
-		A0C7E4F51F035FD200488DA2 /* LPRatingViewCompletionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C7E4F41F035FD200488DA2 /* LPRatingViewCompletionState.swift */; };
+		A0C7E4F51F035FD200488DA2 /* LPRatingViewCompletionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C7E4F41F035FD200488DA2 /* LPRatingViewCompletionStatus.swift */; };
 		A0F4DBE91F033E2C00CE625D /* LPIntegratedRating.h in Headers */ = {isa = PBXBuildFile; fileRef = A0F4DBE71F033E2C00CE625D /* LPIntegratedRating.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A0F4DBF01F033FD300CE625D /* LPRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4DBEF1F033FD300CE625D /* LPRatingView.swift */; };
 		A0F4DC101F03427B00CE625D /* LPRatingViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4DC0F1F03427B00CE625D /* LPRatingViewConfiguration.swift */; };
@@ -17,7 +17,7 @@
 
 /* Begin PBXFileReference section */
 		A0C7E4F21F0342E400488DA2 /* LPRatingViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPRatingViewState.swift; sourceTree = "<group>"; };
-		A0C7E4F41F035FD200488DA2 /* LPRatingViewCompletionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPRatingViewCompletionState.swift; sourceTree = "<group>"; };
+		A0C7E4F41F035FD200488DA2 /* LPRatingViewCompletionStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPRatingViewCompletionStatus.swift; sourceTree = "<group>"; };
 		A0F4DBE41F033E2C00CE625D /* LPIntegratedRating.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LPIntegratedRating.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0F4DBE71F033E2C00CE625D /* LPIntegratedRating.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LPIntegratedRating.h; sourceTree = "<group>"; };
 		A0F4DBE81F033E2C00CE625D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 				A0F4DC111F03428E00CE625D /* LPRatingViewDelegate.swift */,
 				A0F4DC0F1F03427B00CE625D /* LPRatingViewConfiguration.swift */,
 				A0C7E4F21F0342E400488DA2 /* LPRatingViewState.swift */,
-				A0C7E4F41F035FD200488DA2 /* LPRatingViewCompletionState.swift */,
+				A0C7E4F41F035FD200488DA2 /* LPRatingViewCompletionStatus.swift */,
 				A0F4DBE81F033E2C00CE625D /* Info.plist */,
 			);
 			path = LPIntegratedRating;
@@ -148,7 +148,7 @@
 			files = (
 				A0F4DC101F03427B00CE625D /* LPRatingViewConfiguration.swift in Sources */,
 				A0F4DC121F03428E00CE625D /* LPRatingViewDelegate.swift in Sources */,
-				A0C7E4F51F035FD200488DA2 /* LPRatingViewCompletionState.swift in Sources */,
+				A0C7E4F51F035FD200488DA2 /* LPRatingViewCompletionStatus.swift in Sources */,
 				A0F4DBF01F033FD300CE625D /* LPRatingView.swift in Sources */,
 				A0C7E4F31F0342E400488DA2 /* LPRatingViewState.swift in Sources */,
 			);

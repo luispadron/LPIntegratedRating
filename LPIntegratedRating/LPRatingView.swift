@@ -146,8 +146,12 @@ open class LPRatingView: UIView {
         switch self.state {
         case .initial:
             transition(to: .approval)
-        default:
-            return
+        case .approval:
+            // User approved twice
+            delegate?.didFinish(with: .ratingApproved)
+        case .rejection:
+            // User denied initally then approved
+            delegate?.didFinish(with: .feedbackApproved)
         }
     }
     
@@ -155,8 +159,12 @@ open class LPRatingView: UIView {
         switch self.state {
         case .initial:
             transition(to: .rejection)
-        default:
-            return
+        case .approval:
+            // User rejected after initial ask
+            delegate?.didFinish(with: .ratingDenied)
+        case .rejection:
+            // User rejected initially and then again
+            delegate?.didFinish(with: .feedbackDenied)
         }
     }
     
