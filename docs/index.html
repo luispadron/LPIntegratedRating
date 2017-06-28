@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>LPIntegratedRating  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="LPIntegratedRating  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">LPIntegratedRating Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/luispadron/LPIntegratedRating"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">LPIntegratedRating Reference</a>
+        <img id="carat" src="img/carat.png" />
+        LPIntegratedRating  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/LPRatingCollectionViewCell.html">LPRatingCollectionViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/LPRatingTableViewCell.html">LPRatingTableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/LPRatingView.html">LPRatingView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/LPRatingViewCompletionStatus.html">LPRatingViewCompletionStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/LPRatingViewState.html">LPRatingViewState</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/LPRatingViewDelegate.html">LPRatingViewDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/LPRatingViewConfiguration.html">LPRatingViewConfiguration</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h2 id='lpintegratedrating' class='heading'>LPIntegratedRating</h2>
+
+<h3 align="center">An integrated rating view for iOS built with Swift 4</h3>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/luispadron/LPIntegratedRating/master/.github/Demo.png" width="500"/>  
+</p>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/luispadron/LPIntegratedRating/master/.github/ViewFlow.png" width="500"/>  
+</p>
+<h2 id='features' class='heading'>Features</h2>
+
+<ul>
+<li>Stops users feeling annoyed from pop ups asking for ratings.</li>
+<li>Customizable for your app needs.</li>
+<li>Easy to use with <code>UITableView</code>&lsquo;s and <code>UICollectionViews</code>&rsquo;s.</li>
+</ul>
+<h2 id='installation' class='heading'>Installation</h2>
+<h3 id='cocoapods-recommended' class='heading'>Cocoapods (recommended)</h3>
+
+<ol>
+<li>Install <a href="https://cocoapods.org">CocoaPods</a></li>
+<li><p>Add this pod to your <code>Podfile</code></p>
+<pre class="highlight ruby"><code><span class="n">target</span> <span class="s1">'Example'</span> <span class="k">do</span>
+    <span class="n">use_frameworks!</span>
+
+    <span class="n">pod</span> <span class="s1">'LPIntegratedRating'</span>
+<span class="k">end</span>
+</code></pre></li>
+<li><p>Run <code>pod install</code></p></li>
+<li><p>Open up the <code>.xcworkspace</code> that CocoaPods created</p></li>
+<li><p>Import <code>LPIntegratedRating</code> into any source file where it&rsquo;s needed</p></li>
+</ol>
+<h3 id='from-source' class='heading'>From Source</h3>
+
+<ol>
+<li>Simply download the source from <a href="https://github.com/luispadron/LPIntegratedRating/tree/master/LPIntegratedRating">here</a> and add it to your Xcode project</li>
+</ol>
+<h2 id='usage' class='heading'>Usage</h2>
+<h3 id='delegate-conformance' class='heading'>Delegate conformance</h3>
+
+<p>You must conform to the delegate in order to customize the view.</p>
+
+<p>Here is an example:</p>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">LPRatingViewDelegate</span> <span class="p">{</span>
+
+    <span class="kd">func</span> <span class="nf">ratingViewDidFinish</span><span class="p">(</span><span class="n">with</span> <span class="nv">status</span><span class="p">:</span> <span class="kt">LPRatingViewCompletionStatus</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="n">status</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">ratingApproved</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Rating approved"</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">ratingDenied</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Rating denied"</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">feedbackApproved</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Feedback approved"</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">feedbackDenied</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Feedback denied"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">ratingViewConfiguration</span><span class="p">(</span><span class="k">for</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">LPRatingViewState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">LPRatingViewConfiguration</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="n">state</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">initial</span><span class="p">:</span>
+            <span class="k">let</span> <span class="nv">title</span> <span class="o">=</span> <span class="kt">NSAttributedString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"Enjoying this app?"</span><span class="p">,</span>
+                                           <span class="nv">attributes</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="nv">foregroundColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">white</span><span class="p">])</span>
+            <span class="k">let</span> <span class="nv">title2</span> <span class="o">=</span> <span class="kt">NSAttributedString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"Yes!"</span><span class="p">,</span>
+                                            <span class="nv">attributes</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="nv">foregroundColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mf">0.376</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mf">0.788</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mf">0.773</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mf">1.00</span><span class="p">)])</span>
+            <span class="k">let</span> <span class="nv">title3</span> <span class="o">=</span> <span class="kt">NSAttributedString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"Not really"</span><span class="p">,</span>
+                                            <span class="nv">attributes</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="nv">foregroundColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">white</span><span class="p">])</span>
+            <span class="k">return</span> <span class="kt">LPRatingViewConfiguration</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
+                                             <span class="nv">approvalButtonTitle</span><span class="p">:</span> <span class="n">title2</span><span class="p">,</span>
+                                             <span class="nv">rejectionButtonTitle</span><span class="p">:</span> <span class="n">title3</span><span class="p">)</span>
+
+        <span class="k">case</span> <span class="o">.</span><span class="nv">approval</span><span class="p">:</span>
+            <span class="k">let</span> <span class="nv">title</span> <span class="o">=</span> <span class="kt">NSAttributedString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"How about rating, then?"</span><span class="p">,</span>
+                                           <span class="nv">attributes</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="nv">foregroundColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">white</span><span class="p">])</span>
+            <span class="k">let</span> <span class="nv">title2</span> <span class="o">=</span> <span class="kt">NSAttributedString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"Ok, sure"</span><span class="p">,</span>
+                                            <span class="nv">attributes</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="nv">foregroundColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mf">0.376</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mf">0.788</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mf">0.773</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mf">1.00</span><span class="p">)])</span>
+            <span class="k">let</span> <span class="nv">title3</span> <span class="o">=</span> <span class="kt">NSAttributedString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"No, thanks"</span><span class="p">,</span>
+                                            <span class="nv">attributes</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="nv">foregroundColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">white</span><span class="p">])</span>
+            <span class="k">return</span> <span class="kt">LPRatingViewConfiguration</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
+                                             <span class="nv">approvalButtonTitle</span><span class="p">:</span> <span class="n">title2</span><span class="p">,</span>
+                                             <span class="nv">rejectionButtonTitle</span><span class="p">:</span> <span class="n">title3</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">rejection</span><span class="p">:</span>
+            <span class="k">let</span> <span class="nv">title</span> <span class="o">=</span> <span class="kt">NSAttributedString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"Would you mind giving us some feedback"</span><span class="p">,</span>
+                                           <span class="nv">attributes</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="nv">foregroundColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">white</span><span class="p">])</span>
+            <span class="k">let</span> <span class="nv">title2</span> <span class="o">=</span> <span class="kt">NSAttributedString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"Ok, sure"</span><span class="p">,</span>
+                                            <span class="nv">attributes</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="nv">foregroundColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mf">0.376</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mf">0.788</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mf">0.773</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mf">1.00</span><span class="p">)])</span>
+            <span class="k">let</span> <span class="nv">title3</span> <span class="o">=</span> <span class="kt">NSAttributedString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"No, thanks"</span><span class="p">,</span>
+                                            <span class="nv">attributes</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="nv">foregroundColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">white</span><span class="p">])</span>
+            <span class="k">return</span> <span class="kt">LPRatingViewConfiguration</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
+                                             <span class="nv">approvalButtonTitle</span><span class="p">:</span> <span class="n">title2</span><span class="p">,</span>
+                                             <span class="nv">rejectionButtonTitle</span><span class="p">:</span> <span class="n">title3</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre>
+<h3 id='uitableview' class='heading'>UITableView</h3>
+
+<p>Simply create an instance of <code>LPRatingTableViewCell</code>, assign the delegate and return it!</p>
+<pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UITableViewCell</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="kt">LPRatingTableViewCell</span><span class="p">(</span><span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="k">default</span><span class="p">,</span> <span class="nv">reuseIdentifier</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+    <span class="n">cell</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+
+    <span class="k">return</span> <span class="n">cell</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id='uicollectionview' class='heading'>UICollectionView</h3>
+
+<p>First register the class</p>
+<pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+    <span class="c1">// Register class</span>
+    <span class="n">collectionView</span><span class="p">?</span><span class="o">.</span><span class="nf">register</span><span class="p">(</span><span class="kt">LPRatingCollectionViewCell</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forCellWithReuseIdentifier</span><span class="p">:</span> <span class="s">"testCell"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Then simply create an instance of <code>LPRatingCollectionViewCell</code>, assign the delegate and return it</p>
+<pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">cellForItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UICollectionViewCell</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="nf">dequeueReusableCell</span><span class="p">(</span><span class="nv">withReuseIdentifier</span><span class="p">:</span> <span class="s">"testCell"</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span> <span class="k">as!</span> <span class="kt">LPRatingCollectionViewCell</span>
+    <span class="n">cell</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+
+    <span class="k">return</span> <span class="n">cell</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id='documentation' class='heading'>Documentation</h3>
+
+<p>Here is the flow of the view, and the types of cases that will be passed to the delegate along the way.</p>
+
+<p><img src="https://raw.githubusercontent.com/luispadron/LPIntegratedRating/master/.github/DocumentationFlow.png" alt="doc-flow"></p>
+
+<p>Read the full documentation <a href="#">here</a></p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://luispadron.com" target="_blank" rel="external">Luis</a>. All rights reserved. (Last updated: 2017-06-28)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
