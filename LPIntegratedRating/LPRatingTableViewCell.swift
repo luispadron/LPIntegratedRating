@@ -45,26 +45,25 @@ open class LPRatingTableViewCell: UITableViewCell {
     
     // MARK: Overrides
     
+    /// Overriden
     open override func prepareForReuse() {
         super.prepareForReuse()
         delegate = nil
     }
     
+    /// Overriden
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         initCell()
     }
     
+    /// Overriden
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initCell()
     }
     
-    open override func didMoveToSuperview() {
-        super.didMoveToSuperview()
-        self.layoutSubviews()
-    }
-    
+    /// Overriden
     open override func layoutSubviews() {
         super.layoutSubviews()
         // Set full frame for view inside content view

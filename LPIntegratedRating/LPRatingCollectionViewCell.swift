@@ -36,6 +36,7 @@ open class LPRatingCollectionViewCell: UICollectionViewCell {
     
     // MARK: Properties
     
+    /// The delegate of the `LPRatingView` subview, this will just assign the delegate to the `ratingView` subview.
     open weak var delegate: LPRatingViewDelegate? {
         didSet {
             ratingView.delegate = self.delegate
@@ -44,16 +45,19 @@ open class LPRatingCollectionViewCell: UICollectionViewCell {
     
     // MARK: Overrides
     
+    /// Overriden
     public override init(frame: CGRect) {
         super.init(frame: frame)
         initCell()
     }
     
+    /// Overriden
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initCell()
     }
     
+    /// Overriden
     open override func layoutSubviews() {
         super.layoutSubviews()
         // Set full frame for view inside content view
