@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
 
-  s.source       = { :git => "https://github.com/luispadron/LPIntegratedRating", :tag => "v#{s.version}" }
+  s.source       = { :git => "https://github.com/luispadron/LPIntegratedRating.git", :tag => "v#{s.version}" }
 
   s.source_files  = "LPIntegratedRating", "LPIntegratedRating/**/*.{h,m}"
 end
