@@ -6,6 +6,6 @@
 //  Copyright © 2017 Luis Padron. All rights reserved.
 //
 
-public protocol LPRatingViewDelegate {
+public protocol LPRatingViewDelegate: class {
     func configuration(for state: LPRatingViewState) -> LPRatingViewConfiguration
 }

@@ -7,9 +7,8 @@
 //
 
 public enum LPRatingViewState {
+    case initial
+    case approval
     case initialRejection
-    case finalRejection
-    case initialApproval
-    case finalApproval
     case intermediaryRejection
 }
