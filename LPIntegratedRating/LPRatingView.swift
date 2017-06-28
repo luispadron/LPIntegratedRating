@@ -8,6 +8,10 @@
 
 import UIKit
 
+internal extension UIColor {
+    static let defaultColor: UIColor = UIColor(red: 0.310, green: 0.325, blue: 0.616, alpha: 1.00)
+}
+
 open class LPRatingView: UIView {
     
     // MARK: Properties
@@ -26,8 +30,7 @@ open class LPRatingView: UIView {
         let title = NSAttributedString(string: "Default view configuration, change it!",
                                        attributes: [.foregroundColor: UIColor.white])
         let approvalTitle = NSAttributedString(string: "Default yes",
-                                               attributes: [.foregroundColor: UIColor(red: 0.376, green: 0.788,
-                                                                                      blue: 0.773, alpha: 1.00)])
+                                               attributes: [.foregroundColor: UIColor.defaultColor])
         let rejectionTitle = NSAttributedString(string: "Default no",
                                                 attributes: [.foregroundColor: UIColor.white])
         return LPRatingViewConfiguration(title: title,

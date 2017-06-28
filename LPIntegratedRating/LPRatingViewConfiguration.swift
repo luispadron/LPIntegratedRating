@@ -13,9 +13,9 @@ public struct LPRatingViewConfiguration {
     let approvalButtonTitle: NSAttributedString
     let rejectionButtonTitle: NSAttributedString
     
-    var backgroundColor: UIColor = UIColor(red: 0.376, green: 0.788, blue: 0.773, alpha: 1.00)
+    var backgroundColor: UIColor = UIColor.defaultColor
     var approvalButtonColor: UIColor = UIColor.white
-    var rejectionButtonColor: UIColor = UIColor(red: 0.376, green: 0.788, blue: 0.773, alpha: 1.00)
+    var rejectionButtonColor: UIColor = UIColor.defaultColor
     
     public init(title: NSAttributedString, approvalButtonTitle: NSAttributedString, rejectionButtonTitle: NSAttributedString) {
         self.title = title
