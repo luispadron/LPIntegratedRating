@@ -16,8 +16,24 @@ open class LPRatingView: UIView {
     
     private var state: LPRatingViewState = .initial
     
+    open var animationDuration: TimeInterval = 1.5
+    
     open var buttonOffset: CGFloat = 15.0
     open var buttonSpacing: CGFloat = 10.0
+    
+    private lazy var defaultConfiguration: LPRatingViewConfiguration = {
+        // Fallback and use default config
+        let title = NSAttributedString(string: "Default view configuration, change it!",
+                                       attributes: [.foregroundColor: UIColor.white])
+        let approvalTitle = NSAttributedString(string: "Default yes",
+                                               attributes: [.foregroundColor: UIColor(red: 0.376, green: 0.788,
+                                                                                      blue: 0.773, alpha: 1.00)])
+        let rejectionTitle = NSAttributedString(string: "Default no",
+                                                attributes: [.foregroundColor: UIColor.white])
+        return LPRatingViewConfiguration(title: title,
+                                         approvalButtonTitle: approvalTitle,
+                                         rejectionButtonTitle: rejectionTitle)
+    }()
     
     // MARK: Overrides
     
@@ -54,14 +70,7 @@ open class LPRatingView: UIView {
             updateView(with: config)
         } else {
             // Fallback and use default config
-            let title = NSAttributedString(string: "Default view configuration, change it!",
-                                           attributes: [.foregroundColor: UIColor.white])
-            let approvalTitle = NSAttributedString(string: "Default yes")
-            let rejectionTitle = NSAttributedString(string: "Default no")
-            let defaultConfig = LPRatingViewConfiguration(title: title,
-                                                          approvalButtonTitle: approvalTitle,
-                                                          rejectionButtonTitle: rejectionTitle)
-            updateView(with: defaultConfig)
+            updateView(with: defaultConfiguration)
         }
     }
     
@@ -87,6 +96,40 @@ open class LPRatingView: UIView {
         
     }
     
+    private func transition(to state: LPRatingViewState) {
+        // Fade out
+        performFadeOutAnimation()
+        // Update config
+        if let config = delegate?.configuration(for: state) {
+            updateView(with: config)
+        } else {
+            // Fallback and use default config
+            updateView(with: defaultConfiguration)
+        }
+        // Fade the views back in
+        performFadeInAnimation()
+        
+        
+        // Finally set the current state
+        self.state = state
+    }
+    
+    private func performFadeOutAnimation() {
+        UIView.animate(withDuration: animationDuration/2) {
+            self.titleLabel.alpha = 0.0
+            self.rejectionButton.alpha = 0.0
+            self.approvalButton.alpha = 0.0
+        }
+    }
+    
+    private func performFadeInAnimation() {
+        UIView.animate(withDuration: animationDuration/2) {
+            self.titleLabel.alpha = 1.0
+            self.rejectionButton.alpha = 1.0
+            self.approvalButton.alpha = 1.0
+        }
+    }
+    
     private func updateView(with config: LPRatingViewConfiguration) {
         self.backgroundColor = config.backgroundColor
         titleLabel.attributedText = config.title
@@ -99,11 +142,22 @@ open class LPRatingView: UIView {
     // MARK: Actions
     
     @objc func approvalButtonTouched(button: UIButton) {
-        
+        // Based on current state determine state to transition to, or whether to call view completion
+        switch self.state {
+        case .initial:
+            transition(to: .approval)
+        default:
+            return
+        }
     }
     
     @objc func rejectionButtonTouched(button: UIButton) {
-        
+        switch self.state {
+        case .initial:
+            transition(to: .rejection)
+        default:
+            return
+        }
     }
     
     

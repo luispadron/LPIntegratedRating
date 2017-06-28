@@ -7,5 +7,5 @@
 //
 
 public protocol LPRatingViewDelegate: class {
-    func configuration(for state: LPRatingViewState) -> LPRatingViewConfiguration
+    func configuration(for state: LPRatingViewState) -> LPRatingViewConfiguration?
 }
