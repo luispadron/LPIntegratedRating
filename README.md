@@ -40,6 +40,8 @@
 
 ## Usage
 
+To learn how to properly ask users to rate your app, read the wonderful article which inspired this library [here.](https://medium.com/circa/the-right-way-to-ask-users-to-review-your-app-9a32fd604fca)
+
 ### Delegate conformance
 
 You must conform to the delegate in order to customize the view.
