@@ -1,5 +1,8 @@
 ## LPIntegratedRating
 
+
+##### Warning: According to [this](https://www.macrumors.com/2017/06/09/ios-11-in-app-ratings/) and some other sources, when iOS 11 and the new app store releases, no custom rating screens will be allowed. Use this library at your own risk since you may be rejected. 
+
 <h3 align="center">An integrated rating view for iOS built with Swift 4</h3>
 
 <p align="center">
